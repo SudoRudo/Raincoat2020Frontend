@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom'
 
 export default function Navbar(props){
-    return(
+    return(<div style={{margin: "auto", width:"50%"}}>
         <ul>
             <NavLink to='/home'>
                 <li>Home</li>
@@ -25,6 +25,7 @@ export default function Navbar(props){
                 <li>Sign Up</li>
             </NavLink></>}
         </ul>
+        </div>
 
     )
 }

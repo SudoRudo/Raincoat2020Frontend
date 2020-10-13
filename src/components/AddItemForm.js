@@ -1,8 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages, faImage } from '@fortawesome/free-solid-svg-icons'
+import {backend} from '../helpers/API'
 
-const backend = "http://localhost:3000/api/v1"
+
 
 
 
@@ -78,8 +79,7 @@ class UploadForm extends React.Component{
                     <input type="file" name="image" accept="image/*"/>
                 </label><br/><br/>
                 <label htmlFor="name">
-                    Name:
-                    <input type="text" name="name"  />
+                    <input type="text" name="name" placeholder="Name"  />
                 </label><br/>
                 <label htmlFor="category">
                   <select  name="category" >
@@ -90,22 +90,22 @@ class UploadForm extends React.Component{
                     <option value="Shoes">Shoes</option>
                   </select>
                 </label><br/>
-                <label htmlFor="Tag">
-                  <select  name="Tag" >
-                  <option value="">Tag</option>
+                <label htmlFor="Tag1">
+                  <select  name="Tag1" >
+                  <option value="">Tag 1</option>
                     {this.state.tags.map(tag => <option value={tag.id}>{tag.name}</option> )}
                     
                   </select>
-                </label>
-                <label htmlFor="Tag">
-                  <select  name="Tag" >
-                  <option value="">Tag</option>
+                </label><br/>
+                <label htmlFor="Tag2">
+                  <select  name="Tag2" >
+                  <option value="">Tag 2</option>
                     {this.state.tags.map(tag => <option value={tag.id}>{tag.name}</option> )}
                   </select>
-                </label>
-                <label htmlFor="Tag">
-                  <select  name="Tag" >
-                  <option value="">Tag</option>
+                </label><br/>
+                <label htmlFor="Tag3">
+                  <select  name="Tag3" >
+                  <option value="">Tag 3</option>
                     {this.state.tags.map(tag => <option value={tag.id}>{tag.name}</option> )}
                   </select>
                 </label>
