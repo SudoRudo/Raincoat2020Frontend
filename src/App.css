@@ -63,6 +63,31 @@ li {
   text-decoration: none;
 }
 
+.outfitBox {
+  height: 500px;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-top: 140px;
+  /* right: 0; */
+  /* margin-left: 50px; */
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: white;
+}
+
+.outfitBox div {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  /* font-size: 25px; */
+  color: #dddddd;
+  display: block;
+  transition: 0.3s;
+}
+
 .sidenav {
   height: 500px;
   width: 0;

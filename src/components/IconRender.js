@@ -10,7 +10,7 @@ import {WiRaindrop,
 
 export default function IconRender(props){
     return (<> 
-    { console.log("icon render " ,props.weather)}
+    {/* { console.log("icon render " ,props.weather)} */}
         {props.weather.current.condition.text.toLowerCase().includes("clear")?
    <WiDaySunny size={50} color='#000' /> : null }
    

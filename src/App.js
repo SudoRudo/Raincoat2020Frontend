@@ -7,7 +7,7 @@ import CurrentWeather from "./containers/CurrentWeather";
 import { withRouter } from 'react-router-dom';
 import Signup from './components/Signup'
 import UploadForm from "./components/AddItemForm";
-import ClothesContainer from "./containers/ClothesContainer";
+import ClothesContainer from "./unused/ClothesContainer";
 import {backend} from './helpers/API'
 import UserSettings from "./containers/UserSettings";
 import SideNav from "./components/SideNav";
@@ -75,6 +75,11 @@ class App extends React.Component {
     })
   }
 
+  // addToOutfit=(e)=>{
+  //   e.target.
+
+  // }
+
 
 
   render(){
@@ -88,7 +93,6 @@ class App extends React.Component {
           <Route path="/login" render={()=> <Login submitHandler={this.loginHandler} />} /> 
           <Route path="/signup" render={()=><Signup submitHandler={this.signupHandler}/>} />
           <Route path="/add-item" render={() => <UploadForm user={this.state.user}/> } />
-          <Route path="/test" render={() => <ClothesContainer user={this.state.user}/> }/>
           <Route path="/user-settings" render={() => <UserSettings user={this.state.user}/>} />
         </Switch>
       </div>

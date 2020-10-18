@@ -3,8 +3,8 @@ import React from 'react';
 export default function ItemCard(props){
 
     return (
-        <div style={{display: "inline-block"}}>
-        <div style={{margin: "5px", padding: "5px", width:"100px", height:"115px",  border:"2px solid grey", borderRadius: "10px"}} >
+        <div onClick={() => props.addItemToFit(props.item)} style={{display: "inline-block"}}>
+        <div style={{margin: "5px", padding: "5px", width:"100px", height:"115px",  backgroundColor:"teal", borderRadius: "5px"}} >
             <img src={`http://localhost:3000${props.item.image.url}`} 
                 style={{
                     height:"100px",  

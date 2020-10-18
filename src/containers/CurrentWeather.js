@@ -3,11 +3,15 @@ import WeatherCard from "../components/WeatherCard";
 import { Redirect } from "react-router-dom";
 import Suggestions from "./ItemSuggestions";
 import WeatherCardNoUser from "../components/WeatherCardNoUser";
+import OutfitBox from "../components/NewOutfit";
 
 class CurrentWeather extends React.Component {
   state = {
     city: false,
     weather: null,
+    items: [],
+    outfitBoxOpen: false,
+    outfitItems: []
   };
 
   // fetchWeather(cityName) {
@@ -41,27 +45,43 @@ class CurrentWeather extends React.Component {
         .catch((error) => console.log(error));
     }
   }
+
+  setItems=(itemArray)=>{
+    this.setState(
+      {items: itemArray }
+    )
+  }
+
+  addItemToFit=(item)=>{
+    const outfitArray = this.state.outfitItems
+    outfitArray.push(item)
+    this.setState({outfitItems: outfitArray})
+    document.getElementById("outfitBox").style.width = "250px"
+    console.log(this.state.outfitItems)
+  }
   
 
   render() {
-    console.log("current user: ", this.props.user)
+    // console.log("current user: ", this.props.user)
     return (
       <>
         {" "}
         {this.state.weather? 
-          <><WeatherCard user={this.props.user} weather={this.state.weather} />
+          <div style={{display: "inline-block"}}><WeatherCard user={this.props.user} weather={this.state.weather} />
             {this.props.user ? (<>
                 
-                <Suggestions user={this.props.user} weather={this.state.weather}/>
+                <Suggestions user={this.props.user} weather={this.state.weather} setItems={this.setItems} items={this.state.items} addItemToFit={this.addItemToFit} />
                 </>
               
           ) : (
             null
           )
           
-        }</> : null }
+        }</div> : null }
         
         {" "}
+
+        <div style={{display: "inline-block"}}> <OutfitBox items={this.state.outfitItems} /> </div> 
       </>
     );
   }

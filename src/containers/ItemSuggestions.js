@@ -4,7 +4,7 @@ import ItemCard from '../components/ItemCard';
 
 class Suggestions extends React.Component{
     state = {
-        items: []
+        // items: []
     }
 
     filterItems(items){
@@ -37,7 +37,7 @@ class Suggestions extends React.Component{
                 }
             }
         
-            this.setState({ items: uniqueArray}) 
+            this.props.setItems(uniqueArray)
             console.log("userItems: ", userItems)
             console.log("uniqueArray: ", uniqueArray)
         }
@@ -55,13 +55,13 @@ class Suggestions extends React.Component{
 
     render(){
         return(
-        <> {this.state.items.length > 0? <span style={ { margin: 10  }}>
-            {/* {console.log("Items: ", this.state.items)} */}
+        <> {this.props.items.length > 0? <span style={ { margin: 10  }}>
+            {/* {console.log("Items: ", this.props.items)} */}
         
         
         <h2>We suggest these items from your collection:</h2>
         <div style={{ width:"475px", height:"200px", overflow: "auto"}} >
-        {this.state.items.map(item => <ItemCard item={item} key={item.id} /> )}
+        {this.props.items.map(item => <ItemCard item={item} key={item.id} addItemToFit={this.props.addItemToFit} /> )}
         </div>    
         </span>: null} </>
         )
