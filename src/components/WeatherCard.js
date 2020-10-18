@@ -1,4 +1,7 @@
 import React from "react";
+import IconRender from "./IconRender";
+import {WiDegrees} from "weather-icons-react";
+
 
 function clothes(temperature, condition) {
   if (temperature < 75.0 && temperature > 45.0) {
@@ -11,17 +14,17 @@ function clothes(temperature, condition) {
   }
 }
 
-function WeatherCard({ weather, user }) {
+function WeatherCard(props) {
   return (
     <>
-      <div>
-        <h1>Hello {user.username}, this is the current weather in {weather.location.name}:</h1>
-        <h3>Temperature: {weather.current.temp_f}</h3>
+      <div style={{marginRight:"20px", marginLeft:"20px"}}>
+        <h1>{props.weather.location.localtime.split(" ")[1]}</h1>
+        <h2>Hello {props.user? (props.user.username.charAt(0).toUpperCase() + props.user.username.slice(1)) : null}, this is the current weather in {props.weather.location.name}:</h2>
+        <h1>Temperature: {props.weather.current.temp_f} ° </h1>
+        <h2> <IconRender weather={props.weather}/> {props.weather.current.condition.text}</h2>
         <h3>
-          {clothes(
-            weather.current.temp_f,
-            weather.current.condition.text.toLowerCase()
-          )}
+          {clothes( props.weather.current.temp_f,
+            props.weather.current.condition.text.toLowerCase())}
         </h3>
       </div>
     </>

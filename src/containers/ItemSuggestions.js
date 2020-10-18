@@ -60,8 +60,8 @@ class Suggestions extends React.Component{
         
         
         <h2>We suggest these items from your collection:</h2>
-        <div  >
-        {this.state.items.map(item => <ItemCard item={item} key={item.id} style={{display: "inline"}} /> )}
+        <div style={{ width:"475px", height:"200px", overflow: "auto"}} >
+        {this.state.items.map(item => <ItemCard item={item} key={item.id} /> )}
         </div>    
         </span>: null} </>
         )

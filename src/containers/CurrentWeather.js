@@ -1,6 +1,5 @@
 import React from "react";
 import WeatherCard from "../components/WeatherCard";
-import CityForm from "../components/CityForm";
 import { Redirect } from "react-router-dom";
 import Suggestions from "./ItemSuggestions";
 import WeatherCardNoUser from "../components/WeatherCardNoUser";
@@ -50,14 +49,14 @@ class CurrentWeather extends React.Component {
       <>
         {" "}
         {this.state.weather? 
-          <>{this.props.user ? (
-            <>
-                <WeatherCard user={this.props.user} weather={this.state.weather} />
+          <><WeatherCard user={this.props.user} weather={this.state.weather} />
+            {this.props.user ? (<>
+                
                 <Suggestions user={this.props.user} weather={this.state.weather}/>
                 </>
               
           ) : (
-            <WeatherCardNoUser weather={this.state.weather} />
+            null
           )
           
         }</> : null }

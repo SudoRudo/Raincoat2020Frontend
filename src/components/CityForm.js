@@ -15,7 +15,7 @@ class CityForm extends React.Component {
     return (
       <form onSubmit={this.props.handleSubmit}>
         <label>
-          City: <input value={this.state.city}onChange={this.handleChange} type="text" name="city" />
+          City: <input value={this.state.city} onChange={this.handleChange} type="text" name="city" />
         </label>{" "}
         <input type="submit" value="Search" />
       </form>

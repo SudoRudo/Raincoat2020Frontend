@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
-import AddRemoveCities from './components/AddRemoveCities';
+
 
 ReactDOM.render(
   <BrowserRouter>
-    {/* <App /> */}
-    <AddRemoveCities />
+  <div className="canvas">
+    <div className="app">
+    <App />
+    </div>
+    </div>
   </BrowserRouter>,
   document.getElementById('root')
 );

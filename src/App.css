@@ -1,6 +1,10 @@
-.App {
-  text-align: center;
-}
+/* .canvas {
+  display: grid;
+  grid-template-columns: repeat(2000, 1px);
+  grid-template-rows: repeat(2000, 1px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -39,10 +43,90 @@
 
 li {
   display: inline;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 #item {
   display: inline;
   height: 100px;
+}
+
+.navlink {
+  text-decoration-color: black;
+  color: white;
+}
+
+.navlink:link,
+.navlink:visited,
+.navlink:hover,
+.navlink:active {
+  text-decoration: none;
+}
+
+.sidenav {
+  height: 500px;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 10;
+  /* right: 0; */
+  /* margin-left: 50px; */
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #dddddd;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.sandwich {
+  position: fixed;
+  /* top: 0; */
+  left: 600px;
+  /* padding-top: 60px; */
+  /* padding-right: 10px; */
+}
+
+.app {
+  /* width: 675px; */
+  margin-top: 100px;
+  text-align: center;
+}
+
+.canvas {
+  width: 800px;
+  height: 800px;
+  border: 2px solid white;
+  border-radius: 700px;
+  margin: 20px;
+  background-image: url("https://i.imgur.com/1XTnBBc.png");
+  background-position: top right;
 }
