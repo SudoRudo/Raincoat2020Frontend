@@ -60,7 +60,8 @@ class Suggestions extends React.Component{
         
         
         <h2>We suggest these items from your collection:</h2>
-        <div style={{ width:"475px", height:"200px", overflow: "auto"}} >
+        {/* <h4>(click on an item to add it to a new outfit)</h4> */}
+        <div className="itemSuggestions" >
         {this.props.items.map(item => <ItemCard item={item} key={item.id} addItemToFit={this.props.addItemToFit} /> )}
         </div>    
         </span>: null} </>

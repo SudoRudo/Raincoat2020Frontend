@@ -12,22 +12,22 @@ export default function IconRender(props){
     return (<> 
     {/* { console.log("icon render " ,props.weather)} */}
         {props.weather.current.condition.text.toLowerCase().includes("clear")?
-   <WiDaySunny size={50} color='#000' /> : null }
+   <WiDaySunny size={props.size} color={props.color} /> : null }
    
    {props.weather.current.condition.text.toLowerCase().includes( "sunny" )?
-   <WiDaySunny size={50} color='#000' /> : null }
+   <WiDaySunny size={props.size} color={props.color} /> : null }
    
   {props.weather.current.condition.text.toLowerCase().includes("rain")?
-     <WiRaindrop size={50} color='#000' /> : null}
+     <WiRaindrop size={props.size} color={props.color} /> : null}
   
   {props.weather.current.condition.text.toLowerCase().includes("snow")?
-     <WiSnowflakeCold size={50} color='#000' /> : null }
+     <WiSnowflakeCold size={props.size} color={props.color} /> : null }
   
   {props.weather.current.condition.text.toLowerCase().includes("cloud")?
-     <WiCloudy size={50} color='#000' />: null } 
+     <WiCloudy size={props.size} color={props.color} />: null } 
 
     {props.weather.current.condition.text.toLowerCase().includes("overcast")?
-     <WiCloudy size={50} color='#000' />: null } 
+     <WiCloudy size={props.size} color={props.color} />: null } 
      </>)
     
 }

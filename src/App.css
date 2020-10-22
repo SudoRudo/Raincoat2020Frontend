@@ -6,39 +6,23 @@
   grid-row-gap: 0px;
 } */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.canvas {
+  width: 800px;
+  height: 800px;
+  border: 2px solid white;
+  border-radius: 700px;
+  margin: auto;
+  margin-top: 50px;
+  background-image: url("https://i.imgur.com/1XTnBBc.png");
+  background-position: top right;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app {
+  /* width: 675px; */
+  margin-top: 100px;
+  text-align: center;
+  color: ;
 }
 
 li {
@@ -69,7 +53,7 @@ li {
   position: fixed;
   z-index: 1;
   top: 0;
-  margin-top: 140px;
+  margin-top: 170px;
   /* right: 0; */
   /* margin-left: 50px; */
   background-color: #111;
@@ -88,6 +72,22 @@ li {
   transition: 0.3s;
 }
 
+.outfitBox .closebtn:link,
+.outfitBox .closebtn:visited,
+.outfitBox .closebtn:hover,
+.outfitBox .closebtn:active {
+  text-decoration: none;
+  color: white;
+}
+
+.outfitBox .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
 .sidenav {
   height: 500px;
   width: 0;
@@ -95,7 +95,7 @@ li {
   z-index: 1;
   top: 10;
   /* right: 0; */
-  /* margin-left: 50px; */
+  margin-top: 18px;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -109,6 +109,7 @@ li {
   color: #dddddd;
   display: block;
   transition: 0.3s;
+  margin-right: 35px;
 }
 
 .sidenav a:hover {
@@ -118,7 +119,7 @@ li {
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 0px;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -133,25 +134,100 @@ li {
 }
 
 .sandwich {
-  position: fixed;
+  /* position: fixed; */
   /* top: 0; */
-  left: 600px;
+  margin-top: 10px;
+  /* margin-right: 10px; */
+  /* left: 0; */
   /* padding-top: 60px; */
   /* padding-right: 10px; */
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 
-.app {
-  /* width: 675px; */
-  margin-top: 100px;
-  text-align: center;
+.addItem {
+  /* width: in a dance 630px; */
+  height: 325px;
+  /* padding-left: 35px; */
 }
 
-.canvas {
-  width: 800px;
-  height: 800px;
-  border: 2px solid white;
-  border-radius: 700px;
-  margin: 20px;
-  background-image: url("https://i.imgur.com/1XTnBBc.png");
-  background-position: top right;
+.settings {
+  width: 635px;
+}
+
+.login,
+.signUp {
+  width: 632px;
+  margin-top: 200px;
+}  
+
+.addAnother:link,
+.addAnother:visited,
+.addAnother:hover,
+.addAnother:active {
+  text-decoration: none;
+  color: black;
+}
+
+.newItem {
+  margin-top: 0px;
+}
+
+.wardrobeContainer {
+  width: 634px;
+  height: 310px;
+  overflow: auto;
+}
+
+.itemSuggestions {
+  width: 630px;
+  height: 200px;
+  overflow: auto;
+}
+
+.welcomeIcon {
+  margin-top: 0px;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.welcomeWeather {
+  margin-top: 700px;
+}
+
+.welcomeScreen {
+  animation-name: welcome;
+  animation-duration: 5s;
+  margin-top: -1203px;
+  animation-timing-function: ease-in;
+}
+
+@keyframes welcome {
+  0% {
+    margin-top: 50px;
+  }
+  30% {
+    margin-top: 50px;
+  }
+  100% {
+    margin-top: -1200px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.createOutfitForm {
+  padding: 20px;
+  margin-bottom: 00px;
+}
+
+.weathercard {
+  width: 630px;
 }

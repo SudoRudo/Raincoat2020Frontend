@@ -47,7 +47,8 @@ class UserSettings extends React.Component{
 
     render(){
 
-        return(<>
+        return(
+        <div className="settings">
         {console.log(this.state.userCities)}
             <div style={{margin:"15px"}}><AddCityContainer user={this.props.user}/></div>
             
@@ -55,7 +56,7 @@ class UserSettings extends React.Component{
             weatherArray : null}
 
             {/* <CityCard weatherObject={this.state.weatherArray[0]}/> */}
-            </>)
+            </div>)
     }
 
 

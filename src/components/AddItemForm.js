@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImages, faImage } from '@fortawesome/free-solid-svg-icons'
 import {backend} from '../helpers/API'
+import ItemCard3 from './ItemCard3'
 
 
 
@@ -10,7 +11,8 @@ import {backend} from '../helpers/API'
 class UploadForm extends React.Component{ 
   
     state = {
-        tags:[]
+        tags:[],
+        newItem: null
     }
 
     componentDidMount(){
@@ -44,7 +46,14 @@ class UploadForm extends React.Component{
             },
             body: ItemFormData
         }).then(response => response.json())
-        .then(data => this.createItemTag(data.id, tagId))
+        .then(item => {
+          this.createItemTag(item.id, tagId)
+          this.setState({
+            newItem: item
+          })
+          this.props.addItemToState(item)
+        })
+        
        
     }
 
@@ -72,10 +81,13 @@ class UploadForm extends React.Component{
   
     render(){  
         return(  
-
+          <div className="addItem">
+            {!this.state.newItem?
+            
             <form onSubmit={this.handleSubmit}>
+              <h2>Add New Item</h2>
                 <label htmlFor="image" >
-                    <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' /><br/>
+                    <FontAwesomeIcon icon={faImage} color='#3B5998' size='5x' /><br/>
                     <input type="file" name="image" accept="image/*"/>
                 </label><br/><br/>
                 <label htmlFor="name">
@@ -112,6 +124,14 @@ class UploadForm extends React.Component{
                 <br/>
                 <input type="submit" value="Submit" />
             </form>
+
+              :
+              <div className="newItem">
+            <ItemCard3 item={this.state.newItem} key={this.state.newItem.id} /><br/>
+            <a href="javascript:void(0)" onClick={() => this.setState({newItem: null})} className="addAnother">ADD ANOTHER ITEM</a>
+            </div>
+            }
+          </div>
         )
     }
 }

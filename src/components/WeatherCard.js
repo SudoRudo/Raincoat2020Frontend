@@ -17,11 +17,11 @@ function clothes(temperature, condition) {
 function WeatherCard(props) {
   return (
     <>
-      <div style={{marginRight:"20px", marginLeft:"20px"}}>
+      <div className="weathercard">
         <h1>{props.weather.location.localtime.split(" ")[1]}</h1>
         <h2>Hello {props.user? (props.user.username.charAt(0).toUpperCase() + props.user.username.slice(1)) : null}, this is the current weather in {props.weather.location.name}:</h2>
         <h1>Temperature: {props.weather.current.temp_f} ° </h1>
-        <h2> <IconRender weather={props.weather}/> {props.weather.current.condition.text}</h2>
+        <h2> <IconRender size={50} weather={props.weather} color={"#000"}/> {props.weather.current.condition.text}</h2>
         <h3>
           {clothes( props.weather.current.temp_f,
             props.weather.current.condition.text.toLowerCase())}

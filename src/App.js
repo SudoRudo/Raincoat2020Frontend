@@ -2,21 +2,23 @@ import React from "react";
 import "./App.css";
 import Login from './components/Login'
 import {Route, Switch} from "react-router-dom"
-import Navbar from "./unused/Navbar"
+// import Navbar from "./unused/Navbar"
 import CurrentWeather from "./containers/CurrentWeather";
 import { withRouter } from 'react-router-dom';
 import Signup from './components/Signup'
-import UploadForm from "./components/AddItemForm";
-import ClothesContainer from "./unused/ClothesContainer";
 import {backend} from './helpers/API'
 import UserSettings from "./containers/UserSettings";
 import SideNav from "./components/SideNav";
+import Wardrobe from "./containers/WardrobeScreen";
+import Welcome from "./containers/Welcome";
 
 class App extends React.Component {
   constructor(props){
     super (props);
     this.state ={
-      user: null
+      user: null,
+      city: false,
+      weather: null,
     }
   }
 
@@ -29,10 +31,26 @@ class App extends React.Component {
       })
       .then(response => response.json())
       .then(data => this.setState({user: data.user}))
-    }else{
-      this.props.history.push("/login")
     }
     
+
+
+
+    if(this.props.user){ 
+      fetch(
+        `http://api.weatherapi.com/v1/current.json?key=4fc4cf2d6da744f8a7343015200310&q=${this.props.user.default_city}`
+      )
+        .then((response) => response.json())
+        .then((weather) => this.setState({ weather, city: true }))
+        .catch((error) => console.log(error));
+    } else {
+      fetch(
+        `http://api.weatherapi.com/v1/current.json?key=4fc4cf2d6da744f8a7343015200310&q=NYC`
+      )
+        .then((response) => response.json())
+        .then((weather) => this.setState({ weather, city: true }))
+        .catch((error) => console.log(error));
+    }
   }
   
 
@@ -89,11 +107,12 @@ class App extends React.Component {
         {/* <Navbar user={this.state.user} logout={this.removeUserState}/> */}
         
         <Switch>
-          <Route path="/home" render={()=> <CurrentWeather user={this.state.user} />} />
+          <Route path="/home" render={()=> <CurrentWeather weather={this.state.weather} city={this.state.city} user={this.state.user} />} />
           <Route path="/login" render={()=> <Login submitHandler={this.loginHandler} />} /> 
           <Route path="/signup" render={()=><Signup submitHandler={this.signupHandler}/>} />
-          <Route path="/add-item" render={() => <UploadForm user={this.state.user}/> } />
+          <Route path="/add-item" render={() => <Wardrobe user={this.state.user} /> } />
           <Route path="/user-settings" render={() => <UserSettings user={this.state.user}/>} />
+          <Route path="/" render={()=> <Welcome weather={this.state.weather} city={this.state.city} user={this.state.user} /> } />
         </Switch>
       </div>
       <div style={{ display:"inline-block", position: "absolute"}}>

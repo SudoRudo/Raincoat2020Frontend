@@ -20,9 +20,10 @@ class Signup extends React.Component{
 
     render(){
         return ( 
+            <div className="signUp">
             <form onSubmit={this.submitHandler}>
                 <input type="text"  name="username" placeholder="Username" value={this.state.username} onChange={this.changeHandler}/> <br/><br/>
-                <input type="text"  name="password" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/> <br/><br/>
+                <input type="password"  name="password" placeholder="Password" value={this.state.password} onChange={this.changeHandler}/> <br/><br/>
                 <label>
                   
                   <select value={this.state.default_city} name="default_city" onChange={this.changeHandler}>
@@ -35,6 +36,7 @@ class Signup extends React.Component{
                 </label>{" "}
                 <input type="submit" value="Sign Up" />
             </form>
+            </div>
         )
     }
 

@@ -10,6 +10,7 @@ class SideNav extends React.Component {
     openNav=()=>{
         if(this.state.open){
         document.getElementById("mySidenav").style.width = "250px"
+        // document.getElementById("outfitBox").style.width = "0px"
     }else{
         document.getElementById("mySidenav").style.width = "0"}
 
@@ -24,8 +25,9 @@ class SideNav extends React.Component {
     render(){
         return(
             <>
-            
+           
             <div id="mySidenav" className="sidenav">
+                 <a href="javascript:void(0)" className="closebtn" onClick={ this.closeNav}>&times;</a>
             <ul >
             <NavLink className="navlink" to='/home'>
                 <li>Home</li>
