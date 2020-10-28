@@ -82,7 +82,7 @@ class OutfitBox extends React.Component{
             <div id="outfitBox" className="outfitBox">
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeBox}>&times;</a>
             <h3 >{this.state.newOutfit.name}</h3>
-            <h3>Your outfit for {this.state.newOutfit.condition} weather</h3>
+            <h4>Your outfit for {this.state.newOutfit.condition} weather</h4>
             {this.props.items.map(item => <ItemCard item={item} key={item.id}/> )}
             </div> 
             }

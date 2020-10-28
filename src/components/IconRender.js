@@ -3,6 +3,8 @@ import {WiRaindrop,
     WiDaySunny,
     WiSnowflakeCold,
     WiCloudy,
+    WiRaindrops,
+    WiNightFog,
     WiThermometerExterior,
     WiHumidity} from "weather-icons-react";
 
@@ -28,6 +30,14 @@ export default function IconRender(props){
 
     {props.weather.current.condition.text.toLowerCase().includes("overcast")?
      <WiCloudy size={props.size} color={props.color} />: null } 
+
+{props.weather.current.condition.text.toLowerCase().includes("overcast")?
+     <WiCloudy size={props.size} color={props.color} />: null } 
+{props.weather.current.condition.text.toLowerCase().includes("mist")?
+     <WiRaindrops size={props.size} color={props.color} />: null } 
+
+{props.weather.current.condition.text.toLowerCase().includes("fog")?
+     <WiNightFog size={props.size} color={props.color} />: null } 
      </>)
     
 }

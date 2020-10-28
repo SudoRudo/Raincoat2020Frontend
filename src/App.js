@@ -11,6 +11,7 @@ import UserSettings from "./containers/UserSettings";
 import SideNav from "./components/SideNav";
 import Wardrobe from "./containers/WardrobeScreen";
 import Welcome from "./containers/Welcome";
+import OutfitContainer from "./containers/OutfitContainer";
 
 class App extends React.Component {
   constructor(props){
@@ -107,12 +108,14 @@ class App extends React.Component {
         {/* <Navbar user={this.state.user} logout={this.removeUserState}/> */}
         
         <Switch>
+          {/* <Route path="/test" render={()=> <OutfitContainer /> } /> */}
           <Route path="/home" render={()=> <CurrentWeather weather={this.state.weather} city={this.state.city} user={this.state.user} />} />
           <Route path="/login" render={()=> <Login submitHandler={this.loginHandler} />} /> 
           <Route path="/signup" render={()=><Signup submitHandler={this.signupHandler}/>} />
           <Route path="/add-item" render={() => <Wardrobe user={this.state.user} /> } />
           <Route path="/user-settings" render={() => <UserSettings user={this.state.user}/>} />
           <Route path="/" render={()=> <Welcome weather={this.state.weather} city={this.state.city} user={this.state.user} /> } />
+          
         </Switch>
       </div>
       <div style={{ display:"inline-block", position: "absolute"}}>
