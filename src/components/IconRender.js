@@ -31,8 +31,8 @@ export default function IconRender(props){
     {props.weather.current.condition.text.toLowerCase().includes("overcast")?
      <WiCloudy size={props.size} color={props.color} />: null } 
 
-{props.weather.current.condition.text.toLowerCase().includes("overcast")?
-     <WiCloudy size={props.size} color={props.color} />: null } 
+{/* {props.weather.current.condition.text.toLowerCase().includes("overcast")?
+     <WiCloudy size={props.size} color={props.color} />: null }  */}
 {props.weather.current.condition.text.toLowerCase().includes("mist")?
      <WiRaindrops size={props.size} color={props.color} />: null } 
 

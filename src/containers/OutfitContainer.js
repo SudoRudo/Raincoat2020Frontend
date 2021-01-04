@@ -4,7 +4,7 @@ import {backend} from '../helpers/API'
 
 class OutfitContainer extends React.Component{
     state = {
-        outfits: []
+        outfits:[]
     }
 
     componentDidMount=()=>{

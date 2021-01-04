@@ -38,7 +38,7 @@ class SideNav extends React.Component {
                 <li>Wardrobe</li>
             </NavLink>
             <NavLink className="navlink" to='/user-settings'>
-                <li>settings</li>
+                <li>Settings</li>
             </NavLink>
             <NavLink className="navlink" to='/home'>
             <li onClick={this.props.logout}>SignOut</li>

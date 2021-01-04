@@ -46,9 +46,9 @@ class CurrentWeather extends React.Component {
     // }
   }
 
-  setItems=(itemArray)=>{
+  setItems=(items)=>{
     this.setState(
-      {items: itemArray }
+      {items}
     )
   }
 
