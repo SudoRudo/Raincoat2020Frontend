@@ -6,9 +6,9 @@ class Login extends React.Component{
         password:"",
     }
 
-    changeHandler = (e) => {
+    changeHandler = (event) => {
         this.setState(
-            { [e.target.name]: e.target.value }
+            { [event.target.name]: event.target.value }
         )
     }
 

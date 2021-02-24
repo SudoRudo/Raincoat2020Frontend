@@ -47,7 +47,7 @@ class AddCityContainer extends React.Component{
         <div style={{display: "inline-block"}}>{this.state.showSearchForm?
         <button className='btn' 
         onClick={this.showSearchForm}>
-            Close Form
+            X Close Form 
         </button> : <button className='btn' 
         onClick={this.showSearchForm}>
             Add a New City
